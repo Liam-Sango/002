@@ -2,12 +2,16 @@ export default function AboutSection() {
   return (
     <section id="about" className="section" aria-labelledby="about-heading">
       <div className="site-container">
-        <div className="win-window">
-          <div className="win-title-bar">
-            <span>📋 About Me</span>
-            <span>✕</span>
+        <div className="window">
+          <div className="title-bar">
+            <div className="title-bar-text">📋 About Me</div>
+            <div className="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
           </div>
-          <div className="win-body">
+          <div className="window-body">
             <h2 id="about-heading" className="section-title">
               About Me
             </h2>
@@ -68,6 +72,10 @@ export default function AboutSection() {
                 PDF &middot; last updated June 2026
               </p>
             </div>
+          </div>
+          <div className="status-bar">
+            <p className="status-bar-field">Ready</p>
+            <p className="status-bar-field">About Me</p>
           </div>
         </div>
       </div>

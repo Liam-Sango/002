@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import blogPosts, { getAllTags, filterPosts, type BlogPost } from "@/data/blog";
+import blogPosts, { getAllTags, filterPosts } from "@/data/blog";
 
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-AU", {
@@ -24,12 +24,16 @@ export default function BlogSection() {
   return (
     <section id="blog" className="section" aria-labelledby="blog-heading">
       <div className="site-container">
-        <div className="win-window">
-          <div className="win-title-bar">
-            <span>📝 Blog</span>
-            <span>✕</span>
+        <div className="window">
+          <div className="title-bar">
+            <div className="title-bar-text">📝 Blog</div>
+            <div className="title-bar-controls">
+              <button aria-label="Minimize"></button>
+              <button aria-label="Maximize"></button>
+              <button aria-label="Close"></button>
+            </div>
           </div>
-          <div className="win-body">
+          <div className="window-body">
             <h2 id="blog-heading" className="section-title">
               Blog
             </h2>
@@ -42,7 +46,7 @@ export default function BlogSection() {
               <input
                 id="blog-search"
                 type="text"
-                className="win-input blog-search"
+                className="blog-search"
                 placeholder="🔍 Search posts..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
@@ -92,6 +96,12 @@ export default function BlogSection() {
                 </article>
               ))
             )}
+          </div>
+          <div className="status-bar">
+            <p className="status-bar-field">
+              {visiblePosts.length} post{visiblePosts.length !== 1 ? "s" : ""}
+            </p>
+            <p className="status-bar-field">Blog</p>
           </div>
         </div>
       </div>
