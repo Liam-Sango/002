@@ -70,23 +70,21 @@ function start() {
   intervalId = setInterval(load, POLL_MS);
 }
 
-function stop() {
-  if (intervalId !== null) {
-    clearInterval(intervalId);
-    intervalId = null;
-  }
-}
-
 export function useMarketFeed(): Feed {
   const [feed, setFeed] = useState<Feed>(state);
 
   useEffect(() => {
     subscribers.add(setFeed);
     setFeed(state); // sync any state that arrived before mount
+    // The interval is intentionally kept alive for the page lifetime — one cheap
+    // 45 s poll shared by all subscribers. Stopping on last unsubscribe would
+    // cause refetch bursts during route transitions against the rate-limited
+    // free Finnhub tier.
     start();
     return () => {
+      // Remove the unmounted component's setter so we never call setState after
+      // unmount, but leave the interval running.
       subscribers.delete(setFeed);
-      if (subscribers.size === 0) stop();
     };
   }, []);
 
