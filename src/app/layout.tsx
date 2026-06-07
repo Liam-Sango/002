@@ -1,13 +1,25 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Outfit, Manrope, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
 
-const inter = Inter({
+// Display — a clean geometric sans with crisp, modern forms that suit
+// the glass aesthetic (not Inter/Roboto/system).
+const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
+  variable: "--font-display",
+  weight: ["400", "500", "600", "700"],
 });
 
+// Body — a soft humanist sans, easy to read over frosted surfaces.
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+  weight: ["400", "500", "600", "700"],
+});
+
+// Mono — technical labels, metadata, badges.
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   display: "swap",
@@ -26,16 +38,16 @@ export const metadata: Metadata = {
   },
 };
 
-// Gradient "LS" glyph favicon (violet → cyan), matching the site accent.
+// "LS" glyph favicon — frosted dark glass block with a luminous edge.
 const FAVICON =
   "data:image/svg+xml," +
   encodeURIComponent(
     `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>` +
       `<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>` +
-      `<stop offset='0' stop-color='%238b5cf6'/><stop offset='1' stop-color='%2322d3ee'/>` +
+      `<stop offset='0' stop-color='%23161a22'/><stop offset='1' stop-color='%230a0c11'/>` +
       `</linearGradient></defs>` +
-      `<rect width='100' height='100' rx='22' fill='url(%23g)'/>` +
-      `<text x='50' y='68' font-size='52' font-family='Arial, sans-serif' font-weight='800' text-anchor='middle' fill='white'>LS</text>` +
+      `<rect x='3' y='3' width='94' height='94' rx='24' fill='url(%23g)' stroke='%23ffffff' stroke-opacity='0.25' stroke-width='2'/>` +
+      `<text x='50' y='69' font-size='50' font-family='Arial, sans-serif' font-weight='700' text-anchor='middle' fill='%23eaf1ff'>LS</text>` +
       `</svg>`,
   );
 
@@ -45,7 +57,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+    <html
+      lang="en"
+      className={`${outfit.variable} ${manrope.variable} ${jetbrainsMono.variable}`}
+    >
       <head>
         <link rel="icon" href={FAVICON} />
       </head>
