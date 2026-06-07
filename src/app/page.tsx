@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import NavBar, { type SectionId } from "@/components/NavBar";
+import { useEffect, useState } from "react";
+import { type SectionId } from "@/components/NavBar";
+import { SOCIALS } from "@/lib/site";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
@@ -10,63 +11,47 @@ import ProjectsSection from "@/components/ProjectsSection";
 import BlogSection from "@/components/BlogSection";
 import ContactSection from "@/components/ContactSection";
 
-const SOCIALS = {
-  github: "https://github.com/Liam-Sango",
-  linkedin: "https://www.linkedin.com/in/liam-sango",
-  email: "mailto:hello@liamsango.dev",
-};
+const SECTIONS: SectionId[] = [
+  "about",
+  "skills",
+  "experience",
+  "projects",
+  "blog",
+  "contact",
+];
+
+function sectionFromHash(): SectionId | null {
+  const hash = window.location.hash.replace(/^#/, "");
+  return SECTIONS.includes(hash as SectionId) ? (hash as SectionId) : null;
+}
 
 export default function Home() {
+  // `null` → show the hero; otherwise show the matching section panel.
+  // Driven by the URL hash so it stays in sync with NavBar links and
+  // deep-links such as /#blog (e.g. the "Back" link from a detail page).
   const [active, setActive] = useState<SectionId | null>(null);
 
-  function handleNavigate(id: SectionId) {
-    setActive(id);
-  }
-
-  function handleHome() {
-    setActive(null);
-  }
+  useEffect(() => {
+    const sync = () => setActive(sectionFromHash());
+    sync();
+    window.addEventListener("hashchange", sync);
+    return () => window.removeEventListener("hashchange", sync);
+  }, []);
 
   return (
-    <>
-      <NavBar active={active} onNavigate={handleNavigate} onHome={handleHome} />
-
-      <main>
-        <div className="site-container">
-          {/* Keyed so the enter animation retriggers on every tab switch */}
-          <div key={active ?? "home"} className="panel-enter">
-            {active === null && <HeroSection onNavigate={handleNavigate} />}
-            {active === "about" && <AboutSection />}
-            {active === "skills" && <SkillsSection />}
-            {active === "experience" && <ExperienceSection />}
-            {active === "projects" && <ProjectsSection />}
-            {active === "blog" && <BlogSection />}
-            {active === "contact" && <ContactSection socials={SOCIALS} />}
-          </div>
+    <main>
+      <div className="site-container">
+        {/* Keyed so the enter animation retriggers on every tab switch */}
+        <div key={active ?? "home"} className="panel-enter">
+          {active === null && <HeroSection />}
+          {active === "about" && <AboutSection />}
+          {active === "skills" && <SkillsSection />}
+          {active === "experience" && <ExperienceSection />}
+          {active === "projects" && <ProjectsSection />}
+          {active === "blog" && <BlogSection />}
+          {active === "contact" && <ContactSection socials={SOCIALS} />}
         </div>
-      </main>
-
-      <footer className="site-footer">
-        <div className="site-container footer-inner">
-          <span>© {new Date().getFullYear()} Liam Sango</span>
-          <div className="footer-links">
-            <a href={SOCIALS.github} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-            <a href={SOCIALS.linkedin} target="_blank" rel="noopener noreferrer">
-              LinkedIn
-            </a>
-            <a href={SOCIALS.email}>Email</a>
-            <a
-              href="https://github.com/Liam-Sango/002"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Source
-            </a>
-          </div>
-        </div>
-      </footer>
-    </>
+      </div>
+    </main>
   );
 }

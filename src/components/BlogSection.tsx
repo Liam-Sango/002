@@ -1,15 +1,9 @@
 "use client";
 
 import { useState, useMemo } from "react";
+import Link from "next/link";
 import blogPosts, { getAllTags, filterPosts } from "@/data/blog";
-
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-AU", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-}
+import { formatDate } from "@/lib/site";
 
 export default function BlogSection() {
   const [search, setSearch] = useState("");
@@ -81,18 +75,25 @@ export default function BlogSection() {
       ) : (
         <div className="blog-list">
           {visiblePosts.map((post) => (
-            <article key={post.id} className="blog-post">
+            <Link
+              key={post.id}
+              href={`/blog/${post.id}`}
+              className="blog-post"
+            >
               <h3>{post.title}</h3>
               <p className="card-meta">{formatDate(post.date)}</p>
               <p>{post.excerpt}</p>
-              <div className="tag-row">
-                {post.tags.map((tag) => (
-                  <span key={tag} className="badge">
-                    {tag}
-                  </span>
-                ))}
+              <div className="blog-post-foot">
+                <div className="tag-row">
+                  {post.tags.map((tag) => (
+                    <span key={tag} className="badge">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <span className="read-more">Read article →</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       )}

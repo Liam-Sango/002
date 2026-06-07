@@ -23,6 +23,15 @@ Open [http://localhost:3000](http://localhost:3000) in your browser. The site ho
 
 Push to `main` — the [GitHub Actions workflow](.github/workflows/deploy.yml) builds and publishes to GitHub Pages automatically. The site exports as a static bundle in `out/`.
 
+## Live market ticker (optional)
+
+The NERV HUD's bottom ticker can show live stock quotes via [Finnhub](https://finnhub.io/) (free tier). Without a key it falls back to flavor readouts.
+
+- **Local:** copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_FINNHUB_KEY`.
+- **Production:** add a repo secret named `FINNHUB_KEY`; the deploy workflow forwards it at build time.
+
+> This is a `NEXT_PUBLIC_` var, so the key is inlined into the public static bundle — use only a free, rate-limited key.
+
 ## Project Structure
 
 ```

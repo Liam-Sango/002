@@ -1,11 +1,6 @@
+import Link from "next/link";
 import projects from "@/data/projects";
-
-function formatDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-AU", {
-    year: "numeric",
-    month: "short",
-  });
-}
+import { formatMonth } from "@/lib/site";
 
 export default function ProjectsSection() {
   return (
@@ -27,7 +22,7 @@ export default function ProjectsSection() {
             <article key={project.id} className="project-card">
               <div>
                 <h3>{project.title}</h3>
-                <p className="card-meta">{formatDate(project.date)}</p>
+                <p className="card-meta">{formatMonth(project.date)}</p>
               </div>
               <p>{project.description}</p>
               <div className="badge-row">
@@ -38,6 +33,12 @@ export default function ProjectsSection() {
                 ))}
               </div>
               <div className="card-links">
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="btn btn--primary"
+                >
+                  Case study →
+                </Link>
                 <a
                   href={project.github}
                   className="btn btn--ghost"
@@ -49,11 +50,11 @@ export default function ProjectsSection() {
                 {project.liveUrl && (
                   <a
                     href={project.liveUrl}
-                    className="btn btn--primary"
+                    className="btn btn--ghost"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live Site ↗
+                    Live ↗
                   </a>
                 )}
               </div>

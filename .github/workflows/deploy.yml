@@ -32,6 +32,10 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          # Optional: set a repo secret named FINNHUB_KEY to power the live
+          # market ticker. If unset, the ticker uses fallback readouts.
+          NEXT_PUBLIC_FINNHUB_KEY: ${{ secrets.FINNHUB_KEY }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
