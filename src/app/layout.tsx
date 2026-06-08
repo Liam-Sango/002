@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Chakra_Petch, Saira, JetBrains_Mono } from "next/font/google";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-import BootSequence from "@/components/BootSequence";
-import Hud from "@/components/Hud";
+import NervLayer from "@/components/NervLayer";
 import "@/app/globals.css";
 
 // Display — an angular, cut-cornered technical face for that NERV terminal /
@@ -67,11 +66,10 @@ export default function RootLayout({
         <link rel="icon" href={FAVICON} />
       </head>
       <body>
-        <Hud />
+        <NervLayer />
         <NavBar />
         {children}
         <Footer />
-        <BootSequence />
       </body>
     </html>
   );
