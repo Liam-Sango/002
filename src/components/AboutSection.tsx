@@ -8,55 +8,38 @@ export default function AboutSection() {
         About Me
       </h2>
 
-      <div className="prose" style={{ marginTop: "1.25rem" }}>
-        <p>
-          I&apos;m a passionate <strong>full-stack developer</strong> with over
-          five years of experience building modern web applications. I
-          specialize in crafting clean, performant user interfaces backed by
-          robust, scalable server-side systems. My work sits at the
-          intersection of thoughtful design and pragmatic engineering.
-        </p>
-
-        <p>
-          My core toolkit includes <strong>React, Next.js, TypeScript,
-          Node.js, and PostgreSQL</strong>. I&apos;m equally comfortable wiring
-          up RESTful APIs, designing relational data models, and sweating the
-          details on a CSS grid. I&apos;ve shipped features used by thousands of
-          daily active users, contributed to open-source projects, and led
-          architectural reviews that saved teams from costly rewrites.
-        </p>
-
-        <p>
-          Before transitioning fully to the web, I cut my teeth on embedded
-          systems and desktop application development — experiences that
-          instilled a deep appreciation for performance constraints and
-          resource-conscious design. That background still shapes how I write
-          code today: I reach for simplicity first, layer in complexity only
-          when it earns its keep, and measure before I optimize.
-        </p>
-
-        <p>
-          I&apos;m currently open to freelance and full-time opportunities where
-          I can bring a product-minded approach to an engineering team. If
-          you&apos;re building something ambitious and need someone who can
-          contribute across the stack — from architecture sketches to polished
-          UI — I&apos;d love to hear from you.
-        </p>
-      </div>
-
-      <div className="btn-row" style={{ marginTop: "1.75rem" }}>
-        <a href={asset("/resume.pdf")} className="btn btn--primary" download>
-          Download Résumé
-        </a>
-        <span
-          style={{
-            alignSelf: "center",
-            fontSize: "0.8rem",
-            color: "var(--text-dim)",
-          }}
-        >
-          PDF · last updated June 2026
-        </span>
+      <div className="about-intro">
+        {/* Plain <img> + asset(): next/image with `unoptimized` export does not
+            prepend basePath, so the file 404s under /002. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={asset("/RESUME_PHOTO.png")}
+          alt="Liam Sango"
+          width={200}
+          height={200}
+          className="about-photo"
+        />
+        <div className="prose">
+          <p>
+            Hello, I&apos;m Liam — a 17-year-old aspiring cybersecurity
+            professional from Australia. I&apos;m studying a Certificate III in
+            Information Technology at Ringwood Training while finishing high
+            school at Croydon Community High School.
+          </p>
+          <p>
+            Most of what I know I&apos;ve learned by building. I write small
+            tools in C and Python — a Caesar cipher, a terminal tic-tac-toe, a
+            username generator — and I&apos;m currently working on Weaver, a set
+            of offensive- and defensive-security projects that includes a
+            stack-based bytecode VM and assembler. Figuring out how systems
+            work, and how they break, is the part I enjoy most.
+          </p>
+          <p>
+            I learn best by reading code, asking why it works, and rebuilding it
+            myself — this site included. I&apos;m always looking for the next
+            thing to take apart and understand.
+          </p>
+        </div>
       </div>
     </section>
   );

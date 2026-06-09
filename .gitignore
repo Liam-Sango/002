@@ -6,6 +6,10 @@ node_modules/
 # next.js
 .next/
 out/
+*.tsbuildinfo
+
+# tooling state
+.superpowers/
 
 # env
 .env

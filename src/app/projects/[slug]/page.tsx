@@ -8,7 +8,9 @@ import { formatMonth } from "@/lib/site";
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.id }));
+  return projects
+    .filter((project) => project.status !== "in-progress")
+    .map((project) => ({ slug: project.id }));
 }
 
 export async function generateMetadata({

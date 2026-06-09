@@ -2140,3 +2140,100 @@ html::after {
     opacity: 0.85;
   }
 }
+
+/* ================================================================
+   About — intro photo
+   ================================================================ */
+
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+}
+
+.about-photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+.about-note {
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* ================================================================
+   Group sub-headings — Education / Experience / In Progress
+   ================================================================ */
+
+.group-heading {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin: 2.25rem 0 1.1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.group-heading:first-of-type {
+  margin-top: 1rem;
+}
+
+/* In-progress project status pill */
+.project-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.18rem 0.5rem;
+  color: #000;
+  background: var(--accent-bright);
+  border: 1px solid var(--accent-bright);
+}
+
+/* ================================================================
+   Blog — coming soon
+   ================================================================ */
+
+.coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 4rem 1rem 3.5rem;
+  text-align: center;
+}
+
+.coming-soon-title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.6rem, 5vw, 2.75rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  color: var(--accent);
+  margin: 0;
+  text-shadow: 0 0 18px var(--accent-glow);
+}
+
+.coming-soon-sub {
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 42ch;
+}

@@ -1,5 +1,3 @@
-import { asset } from "@/lib/basePath";
-
 export default function HeroSection() {
   return (
     <section className="glass-card hero" aria-labelledby="hero-heading">
@@ -27,9 +25,6 @@ export default function HeroSection() {
       <div className="btn-row">
         <a href="#projects" className="btn btn--primary">
           View Projects →
-        </a>
-        <a href={asset("/resume.pdf")} className="btn btn--ghost" download>
-          Download Résumé
         </a>
         <a href="#contact" className="btn btn--ghost">
           Get in Touch
