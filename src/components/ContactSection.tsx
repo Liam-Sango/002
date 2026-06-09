@@ -16,9 +16,8 @@ export default function ContactSection({ socials }: ContactSectionProps) {
         Let&apos;s Talk
       </h2>
       <p className="section-intro">
-        I&apos;m currently open to freelance and full-time opportunities.
-        Whether you have a project in mind or just want to say hello, my inbox
-        is always open — I&apos;ll do my best to get back to you.
+        Want to talk security, ask about something I&apos;ve built, or just say
+        hello? My inbox is always open — I&apos;ll do my best to get back to you.
       </p>
 
       <div className="btn-row">

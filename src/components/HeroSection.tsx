@@ -12,14 +12,13 @@ export default function HeroSection() {
       </h1>
 
       <p className="hero-role">
-        I build <span className="grad">fast, thoughtful</span> web apps.
+        Aspiring <span className="grad">cybersecurity</span> professional.
       </p>
 
       <p className="hero-lead">
-        Full-stack developer with a product mindset — equally at home designing
-        a relational data model, wiring up a real-time API, or sweating the
-        details on a CSS grid. I care as much about the pixels you see as the
-        queries behind them.
+        Still studying, and learning by building — small tools in C and Python
+        and a security project called Weaver. I&apos;m most interested in how
+        systems work under the hood, and how they break.
       </p>
 
       <div className="btn-row">

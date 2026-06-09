@@ -488,6 +488,7 @@ main {
 .badge {
   display: inline-flex;
   align-items: center;
+  white-space: nowrap;
   font-family: var(--font-mono);
   font-size: 0.68rem;
   text-transform: uppercase;
@@ -857,15 +858,23 @@ main {
 
 .skill-groups {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.1rem;
+}
+
+/* Below full content width, 3 columns squeeze the longest chip; fall back to
+   as many as fit so chips never overflow their panel. */
+@media (max-width: 1000px) {
+  .skill-groups {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  }
 }
 
 .skill-group {
   background: var(--panel-2);
   border: 1px solid var(--line-soft);
   border-top: 2px solid var(--accent);
-  padding: 1.4rem;
+  padding: 1rem;
 }
 
 .skill-group h3 {
@@ -882,6 +891,14 @@ main {
 .skill-group h3::before {
   content: "// ";
   color: var(--text-dim);
+}
+
+/* Skill chips can be long multi-word phrases; shrink them a touch so the
+   longest fit on one line within the 3-up panel layout (no overflow). */
+.skill-group .badge {
+  font-size: 0.6rem;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.4rem;
 }
 
 /* ================================================================

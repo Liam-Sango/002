@@ -3,25 +3,33 @@ export interface SkillGroup {
   items: string[];
 }
 
-// ─────────────────────────────────────────────────────────────
-// Sample data — replace with your real skill set.
-// ─────────────────────────────────────────────────────────────
 const skills: SkillGroup[] = [
   {
-    category: "Languages",
-    items: ["TypeScript", "JavaScript", "Rust", "Go", "Python", "SQL"],
+    category: "Technologies I'm using",
+    items: ["C", "Python", "Bash", "OpenSSL", "ICU (Unicode)", "Arweave"],
   },
   {
-    category: "Frameworks & Libraries",
-    items: ["React", "Next.js", "Node.js", "Express", "Prisma", "Tailwind"],
+    category: "Technical concepts I'm deploying",
+    items: [
+      "Cryptography",
+      "Steganography",
+      "Perfect Forward Secrecy",
+      "Threshold Cryptography",
+      "Decentralised Infrastructure",
+      "Cryptocurrency",
+    ],
   },
   {
-    category: "Data & Infra",
-    items: ["PostgreSQL", "ClickHouse", "Redis", "Docker", "Kubernetes", "gRPC"],
-  },
-  {
-    category: "Tools & Practices",
-    items: ["Git", "CI/CD", "Testing", "Figma", "Observability", "Accessibility"],
+    category: "Things I'm currently learning",
+    items: [
+      "Cryptographic Systems Architecture",
+      "Smart Contract Development",
+      "Rust",
+      "WebAssembly",
+      "System Administration",
+      "Claude Code",
+      "OpenClaw",
+    ],
   },
 ];
 

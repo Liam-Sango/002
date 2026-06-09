@@ -3,7 +3,7 @@
 export const SOCIALS = {
   github: "https://github.com/Liam-Sango",
   linkedin: "https://www.linkedin.com/in/liam-sango",
-  email: "mailto:hello@liamsango.dev",
+  email: "mailto:Prof.Liam.sango@proton.me",
   source: "https://github.com/Liam-Sango/002",
 };
 

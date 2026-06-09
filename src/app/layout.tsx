@@ -30,13 +30,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Liam Sango — Full-Stack Developer",
+  title: "Liam Sango — Aspiring Cybersecurity Professional",
   description:
-    "Portfolio and resume of Liam Sango — a full-stack developer building fast, thoughtful web applications.",
+    "Portfolio of Liam Sango — an aspiring cybersecurity professional and IT student building small tools and security projects.",
   openGraph: {
-    title: "Liam Sango — Full-Stack Developer",
+    title: "Liam Sango — Aspiring Cybersecurity Professional",
     description:
-      "Portfolio and resume of Liam Sango — a full-stack developer building fast, thoughtful web applications.",
+      "Portfolio of Liam Sango — an aspiring cybersecurity professional and IT student building small tools and security projects.",
     type: "website",
   },
 };

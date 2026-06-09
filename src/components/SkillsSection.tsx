@@ -8,9 +8,8 @@ export default function SkillsSection() {
         Tech &amp; Tools
       </h2>
       <p className="section-intro">
-        The languages, frameworks, and tools I reach for most. I&apos;m a
-        generalist at heart — happy to go deep where it matters and pick up
-        whatever a project needs.
+        What I&apos;m building with right now, the libraries behind my projects,
+        and the security concepts and tools I&apos;m currently digging into.
       </p>
 
       <div className="skill-groups">
