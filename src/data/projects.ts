@@ -101,6 +101,31 @@ const projects: Project[] = [
     `,
   },
   {
+    id: "credential-generator-c",
+    title: "Credential Generator",
+    description:
+      "A command-line credential generator written in pure C. Produces strong, randomised passwords with a configurable length and character set — a practical exercise in C string handling and randomness.",
+    tech: ["C"],
+    github: "https://github.com/Liam-Sango/Credential_Generator_C",
+    date: "2025-11-20",
+    content: `
+      <p>A command-line tool written in pure C that generates strong, random
+      credentials. You choose how long the password should be and which
+      character sets to draw from, and it assembles a randomised result.</p>
+
+      <h2>Features</h2>
+      <ul>
+        <li>Configurable password length.</li>
+        <li>Selectable character sets — letters, digits, and symbols.</li>
+        <li>Randomised output generated entirely in C.</li>
+      </ul>
+
+      <p>Writing it in C meant handling the character buffers and randomness by
+      hand, which made the mechanics of building a password generator far more
+      concrete than reaching for a high-level library would have.</p>
+    `,
+  },
+  {
     id: "username-generator",
     title: "Username Generator",
     description:
