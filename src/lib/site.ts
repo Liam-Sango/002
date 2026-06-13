@@ -4,7 +4,7 @@ export const SOCIALS = {
   github: "https://github.com/Liam-Sango",
   linkedin: "https://www.linkedin.com/in/liam-sango",
   email: "mailto:Prof.Liam.sango@proton.me",
-  source: "https://github.com/Liam-Sango/002",
+  source: "https://github.com/Liam-Sango/Web_Portfolio",
 };
 
 /** Shorter month/year form, e.g. "2026-03-08" → "Mar 2026". */

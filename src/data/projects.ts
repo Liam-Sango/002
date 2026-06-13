@@ -17,8 +17,8 @@ const projects: Project[] = [
     description:
       "The site you're looking at: a static Next.js portfolio with a hidden, Evangelion-inspired NERV mode. Built with AI assistance as a way to get hands-on with modern web tooling.",
     tech: ["Next.js", "TypeScript", "React"],
-    github: "https://github.com/Liam-Sango/002",
-    liveUrl: "https://liam-sango.github.io/002/",
+    github: "https://github.com/Liam-Sango/Web_Portfolio",
+    liveUrl: "https://liam-sango.github.io/Web_Portfolio/",
     date: "2026-06-08",
     content: `
       <p><strong>This is the site you're currently looking at.</strong> It's a

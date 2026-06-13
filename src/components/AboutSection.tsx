@@ -10,7 +10,7 @@ export default function AboutSection() {
 
       <div className="about-intro">
         {/* Plain <img> + asset(): next/image with `unoptimized` export does not
-            prepend basePath, so the file 404s under /002. */}
+            prepend basePath, so the file 404s under /Web_Portfolio. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={asset("/RESUME_PHOTO.png")}

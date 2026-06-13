@@ -1,8 +1,8 @@
-# 002 — Liam Sango's Portfolio
+# Web_Portfolio — Liam Sango's Portfolio
 
-A modern, dark-glass portfolio and resume site, built with Next.js and deployed on GitHub Pages. Clean and professional by default — with a hidden **NERV mode** easter egg for anyone who knows the magic word.
+A modern, dark-glass portfolio and resume site, built with Next.js and deployed on GitHub Pages. Clean and professional, with a light/dark theme that follows your system preference.
 
-**Live:** **[liam-sango.github.io/002](https://liam-sango.github.io/002/)**
+**Live:** **[liam-sango.github.io/Web_Portfolio](https://liam-sango.github.io/Web_Portfolio/)**
 
 ![Stack](https://img.shields.io/badge/Next.js-15-black?logo=next.js) ![Stack](https://img.shields.io/badge/React-19-blue?logo=react) ![Stack](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript) ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -19,32 +19,15 @@ npm run dev
 npm run build
 ```
 
-Open **[http://localhost:3000/002](http://localhost:3000/002)** in your browser — the app is served under the `/002` base path, so the bare `/` will 404. The site hot-reloads on save.
-
-## NERV mode (easter egg)
-
-By default the site is a clean, professional dark-glass portfolio. Type **`nerv`** (case-insensitive) anywhere on the page to toggle an Evangelion-inspired **NERV layer**: a boot-sequence animation plus a HUD overlay (live clock, sync-ratio readout, market ticker, and side panels). Type `nerv` again to switch it back off.
-
-- The preference is stored **per session** (`sessionStorage`): it survives same-tab reloads but resets in a new tab or fresh browser.
-- Typing inside a form field (e.g. the blog search box) won't trigger it, and the boot animation respects `prefers-reduced-motion`.
-- Implementation: [`useKeySequence`](src/lib/useKeySequence.ts) detects the typed word; [`NervLayer`](src/components/NervLayer.tsx) gates the boot + HUD behind it.
+Open **[http://localhost:3000/Web_Portfolio](http://localhost:3000/Web_Portfolio)** in your browser — the app is served under the `/Web_Portfolio` base path, so the bare `/` will 404. The site hot-reloads on save.
 
 ## Deploy
 
 Push to `main` — the [GitHub Actions workflow](.github/workflows/deploy.yml) builds and publishes to GitHub Pages automatically. The site exports as a static bundle in `out/`.
 
-- **Live URL:** https://liam-sango.github.io/002/
-- Everything is served under the `/002` base path (`basePath` in [`next.config.ts`](next.config.ts)).
+- **Live URL:** https://liam-sango.github.io/Web_Portfolio/
+- Everything is served under the `/Web_Portfolio` base path (`basePath` in [`next.config.ts`](next.config.ts)).
 - The export is **directory-style** (`trailingSlash: true`), so clean URLs like `/projects/lumen-analytics` resolve on GitHub Pages and other strict static hosts without a `.html` extension.
-
-## Live market ticker (optional)
-
-The NERV HUD's bottom ticker can show live stock quotes via [Finnhub](https://finnhub.io/) (free tier). Without a key it falls back to flavor readouts.
-
-- **Local:** copy `.env.example` to `.env.local` and set `NEXT_PUBLIC_FINNHUB_KEY`.
-- **Production:** add a repo secret named `FINNHUB_KEY`; the deploy workflow forwards it at build time.
-
-> This is a `NEXT_PUBLIC_` var, so the key is inlined into the public static bundle — use only a free, rate-limited key.
 
 ## Project Structure
 
@@ -53,7 +36,7 @@ The NERV HUD's bottom ticker can show live stock quotes via [Finnhub](https://fi
 ├── src/
 │   ├── app/
 │   │   ├── globals.css           # Global styles + dark-glass design system
-│   │   ├── layout.tsx            # Root layout, metadata, fonts, mounts <NervLayer/>
+│   │   ├── layout.tsx            # Root layout, metadata, fonts
 │   │   ├── page.tsx              # Home — composes all sections
 │   │   ├── projects/[slug]/      # Per-project detail pages (statically generated)
 │   │   └── blog/[slug]/          # Per-post detail pages (statically generated)
@@ -66,16 +49,9 @@ The NERV HUD's bottom ticker can show live stock quotes via [Finnhub](https://fi
 │   │   ├── ProjectsSection.tsx   # Project cards linking to detail pages
 │   │   ├── BlogSection.tsx       # Searchable/filterable blog post list
 │   │   ├── ContactSection.tsx    # Email + social contact tiles
-│   │   ├── Footer.tsx            # Site footer
-│   │   ├── NervLayer.tsx         # Gates NERV boot + HUD behind the `nerv` keygate
-│   │   ├── BootSequence.tsx      # NERV-mode boot animation
-│   │   ├── Hud.tsx               # NERV-mode HUD overlay (clock, sync readout)
-│   │   ├── SidePanels.tsx        # NERV-mode side readout panels
-│   │   └── StockTicker.tsx       # Live market ticker (Finnhub)
+│   │   └── Footer.tsx            # Site footer
 │   ├── lib/
-│   │   ├── useKeySequence.ts     # Typed key-sequence detector (powers the keygate)
-│   │   ├── useMarketFeed.ts      # Live market-quote hook (Finnhub)
-│   │   ├── marketViz.ts          # Market data → HUD readout helpers
+│   │   ├── useTheme.ts           # Light/dark theme hook (localStorage + system)
 │   │   ├── basePath.ts           # basePath constant + asset() link helper
 │   │   └── site.ts              # Socials + date-formatting helpers
 │   └── data/
@@ -85,7 +61,7 @@ The NERV HUD's bottom ticker can show live stock quotes via [Finnhub](https://fi
 │       └── experience.ts        # Work history
 ├── public/                      # Static assets (resume.pdf, favicon, etc.)
 ├── .github/workflows/           # CI/CD for GitHub Pages
-├── next.config.ts               # Static export, basePath /002, trailingSlash
+├── next.config.ts               # Static export, basePath /Web_Portfolio, trailingSlash
 └── out/                         # Static export output (generated by build)
 ```
 
@@ -134,7 +110,7 @@ Posts are filterable by tag and searchable by title/excerpt.
 | Styling | Custom CSS design system — dark glassmorphism, CSS custom properties, gradient accents |
 | Fonts | [Inter](https://rsms.me/inter/) + [JetBrains Mono](https://www.jetbrains.com/lp/mono/) via `next/font` |
 | Language | TypeScript |
-| Hosting | GitHub Pages (served under `/002`) |
+| Hosting | GitHub Pages (served under `/Web_Portfolio`) |
 
 ## License
 
