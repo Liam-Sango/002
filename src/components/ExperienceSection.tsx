@@ -22,6 +22,19 @@ function Timeline({ items }: { items: Experience[] }) {
               ))}
             </ul>
           )}
+          {job.reference && (
+            <div className="timeline-reference">
+              <span className="reference-label">Reference</span>
+              <span className="reference-name">{job.reference.name}</span>
+              <span className="reference-title">{job.reference.title}</span>
+              <a
+                href={`tel:${job.reference.phone.replace(/\s/g, "")}`}
+                className="reference-phone"
+              >
+                {job.reference.phone}
+              </a>
+            </div>
+          )}
         </article>
       ))}
     </div>

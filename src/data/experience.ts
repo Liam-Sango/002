@@ -1,3 +1,9 @@
+export interface Reference {
+  name: string;
+  title: string;
+  phone: string;
+}
+
 export interface Experience {
   id: string;
   kind: "education" | "work";
@@ -7,6 +13,7 @@ export interface Experience {
   end: string;
   location?: string;
   bullets: string[];
+  reference?: Reference;
 }
 
 // Ordered newest-first within each group.
@@ -19,6 +26,11 @@ const experience: Experience[] = [
     start: "Feb 2025",
     end: "Current",
     bullets: [],
+    reference: {
+      name: "Reference Name",
+      title: "Course Coordinator",
+      phone: "+61 400 000 000",
+    },
   },
   {
     id: "croydon-high",
@@ -28,6 +40,11 @@ const experience: Experience[] = [
     start: "Oct 2023",
     end: "Current",
     bullets: [],
+    reference: {
+      name: "Reference Name",
+      title: "Teacher",
+      phone: "+61 400 000 001",
+    },
   },
   {
     id: "anz-work-experience",
@@ -37,6 +54,11 @@ const experience: Experience[] = [
     start: "Sep 2025",
     end: "Sep 2025",
     bullets: [],
+    reference: {
+      name: "Reference Name",
+      title: "Program Supervisor",
+      phone: "+61 400 000 002",
+    },
   },
 ];
 

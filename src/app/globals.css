@@ -2015,7 +2015,7 @@ main {
   font-size: 0.74rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-dim);
+  color: var(--accent);
   margin-bottom: 1rem;
   padding-bottom: 0.65rem;
   border-bottom: 1px solid var(--line);
@@ -2125,6 +2125,44 @@ main {
   left: 0;
   top: 0;
   color: var(--text-dim);
+}
+
+.timeline-reference {
+  margin-top: 0.7rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+}
+
+.reference-label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.reference-name {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.reference-title {
+  color: var(--text-dim);
+}
+
+.reference-phone {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+
+.reference-phone:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
 }
 
 /* ================================================================
