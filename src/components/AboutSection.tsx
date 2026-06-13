@@ -21,23 +21,32 @@ export default function AboutSection() {
         />
         <div className="prose">
           <p>
-            Hello, I&apos;m Liam — a 17-year-old aspiring cybersecurity
-            professional from Australia. I&apos;m studying a Certificate III in
-            Information Technology at Ringwood Training while finishing high
-            school at Croydon Community High School.
+            Hello, I&apos;m Liam — a 17-year-old high school student aspiring to
+            a role in offensive cybersecurity.
           </p>
           <p>
-            Most of what I know I&apos;ve learned by building. I write small
-            tools in C and Python — a Caesar cipher, a terminal tic-tac-toe, a
-            username generator — and I&apos;m currently working on Weaver, a set
-            of offensive- and defensive-security projects that includes a
-            stack-based bytecode VM and assembler. Figuring out how systems
-            work, and how they break, is the part I enjoy most.
+            Most of what I&apos;ve learned so far has come from building things
+            from the ground up. I intentionally chose C as my first real
+            programming language in order to get a very good understanding of
+            programming in its oldest and purest form.
           </p>
           <p>
-            I learn best by reading code, asking why it works, and rebuilding it
-            myself — this site included. I&apos;m always looking for the next
-            thing to take apart and understand.
+            Over the last six to eight months I&apos;ve built a small number of
+            C-based projects that have slowly increased in complexity.
+          </p>
+          <p>
+            Over the next six months I intend to build my most complex project
+            yet: the Weaver framework. It&apos;s intended to be a resume piece
+            designed to show my strengths in cybersecurity architecture and
+            cryptographic systems design — demonstrating two novel offensive
+            systems alongside a defensive framework built to counter the methods
+            I put into practice.
+          </p>
+          <p>
+            This website was built with Claude Code so I could get better
+            experience with AI coding tools, given their relevance in the
+            current job market. All my other projects were done with light AI
+            assistance, with most of the code written completely by hand.
           </p>
         </div>
       </div>
